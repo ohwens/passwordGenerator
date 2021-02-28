@@ -1,7 +1,10 @@
 // assign the generate button to a variable
 var generateBtn = document.querySelector("#generate");
 
-// user prompt to pick a password length
+// function to generate a random password
+function writePassword() {
+
+  // user prompt to pick a password length
 var passwordLength = prompt("Pick a password length between 8 and 128 characters.");
 
 // while loop to validate password length and re-initiate the prompt if not valid
@@ -86,20 +89,12 @@ var generatePassword = function() {
   password = password.concat(getRandomItem(validCharacterList));
 }}
 
-// function which clears password value so user can click button more than onoce
-var wipePassword = function() {
-  password = ""
-}
-
-// Write password to the #password input
-function writePassword() {
   generatePassword();
 
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-  wipePassword()
 }
 
 // Add event listener to generate button
